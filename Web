@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "game": "cày thuê blox fruit",
+    "username": "adminskibidi",
+    "password": "MEMAYBEO",
+    "price": 50000,
+    "image": "images/ROBLOX.jpg"
+  },
+  {
+    "id": 2,
+    "game": "BLOXFRUIT",
+    "username": "ffking",
+    "password": "abcxyz",
+    "price": 40000,
+    "image": "images/freefire.jpg"
+  }
+]
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.card {
+  width: 250px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.card-content {
+  padding: 15px;
+}
+.card-content h3 {
+  margin: 0;
+}
+.card-content p {
+  margin: 5px 0;
+}
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #218838;
+}
+fetch("accounts.json")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("acc-container");
+    data.forEach(acc => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${acc.image}" alt="${acc.game}">
+        <div class="card-content">
+          <h3>${acc.game}</h3>
+          <p><strong>Tài khoản:</strong> ${acc.username}</p>
+          <p><strong>Giá:</strong> ${acc.price.toLocaleString()} VNĐ</p>
+          <button onclick="buyAcc(${acc.id})">Mua ngay</button>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  });
+
+function buyAcc(id) {
+  alert("💬 vuilòng vô facebook https://www.facebook.com/profile.php?id=61576572460080);
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop ACC Free GitHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>💥 SHOP Cày THÊ GIÁ RẺ 💥</h1>
+  <div id="acc-container" class="container"></div>
+  <script src="script.js"></script>
+</body>
+</html>
